@@ -4,9 +4,9 @@ import { getAllEvents } from '../../helpers/api-util';
 import EventList from '../../components/events/EventList';
 import EventSearch from '../../components/events/EventsSearch';
 
-function AllEventsPage(props) {
+function AllEventsPage() {
+  const events = getAllEvents();
   const router = useRouter();
-  const events = props.events;
 
   function findEventsHandler(year, month) {
     const fullPath = `/events/${year}/${month}`;
@@ -26,7 +26,6 @@ export async function getStaticProps() {
     props: {
       events: events,
     },
-    revalidate: 60,
   };
 }
 

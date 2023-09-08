@@ -1,9 +1,5 @@
-import PostContent from '../../components/posts/post-detail/PostContent';
-
 // /posts/getting-started-with-next-js (slug)
-function PostDetailPage() {
-  return <PostContent />;
-}
+function PostDetailPage() {}
 
 export default PostDetailPage;
 

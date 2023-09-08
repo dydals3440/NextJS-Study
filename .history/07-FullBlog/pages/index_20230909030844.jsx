@@ -18,14 +18,14 @@ const DUMMY_POSTS = [
     date: '2022-02-10',
   },
   {
-    slug: 'getting-started-with-nextjs3',
+    slug: 'getting Started3',
     title: 'Getting Started With-nextjs',
     image: 'getting-started-nextjs.png',
     excerpt: 'NextJS is a React Framework for Production',
     date: '2022-02-10',
   },
   {
-    slug: 'getting-started-with-nextjs4',
+    slug: 'getting Started4',
     title: 'Getting Started With-nextjs',
     image: 'getting-started-nextjs.png',
     excerpt: 'NextJS is a React Framework for Production',

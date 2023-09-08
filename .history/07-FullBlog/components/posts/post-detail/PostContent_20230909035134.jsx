@@ -8,7 +8,7 @@ const DUMMY_POST = {
   title: 'Getting Started With-nextjs',
   image: 'getting-started-nextjs.png',
   date: '2022-02-10',
-  content: '# This is a first post',
+  content: '### This is a first post',
 };
 
 function PostContent() {

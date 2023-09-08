@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
 import classes from './Post.module.css';
 
 function Post(props) {

@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
-
 import classes from './Post.module.css';
 
 function Post(props) {
@@ -11,7 +9,7 @@ function Post(props) {
     year: 'numeric',
   });
 
-  const imagePath = `/images/posts/${slug}/${image}`;
+  const imagePath = `/images/posts/${slug}`;
 
   return (
     <li className={classes.post}>
@@ -19,7 +17,7 @@ function Post(props) {
       <Link>
         <a>
           <div className={classes.image}>
-            <Image src={imagePath} alt={title} width={300} height={200} />
+            <Image src={} alt={title} width={300} height={200}/>
           </div>
           <div className={classes.content}>
             <h3>{title}</h3>

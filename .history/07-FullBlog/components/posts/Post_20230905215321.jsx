@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
-
 import classes from './Post.module.css';
 
 function Post(props) {
@@ -8,10 +6,7 @@ function Post(props) {
   const formattedDate = new Date(date).toLocaleDateString('ko-KR', {
     day: 'numeric',
     month: 'long', // 1=> January
-    year: 'numeric',
   });
-
-  const imagePath = `/images/posts/${slug}/${image}`;
 
   return (
     <li className={classes.post}>
@@ -19,12 +14,12 @@ function Post(props) {
       <Link>
         <a>
           <div className={classes.image}>
-            <Image src={imagePath} alt={title} width={300} height={200} />
+            <Image />
           </div>
           <div className={classes.content}>
             <h3>{title}</h3>
-            <time>{formattedDate}</time>
-            <p>{excerpt}</p>
+            <time>July 14th 2023</time>
+            <p>The excerpt</p>
           </div>
         </a>
       </Link>

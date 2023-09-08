@@ -32,7 +32,7 @@ const DUMMY_POSTS = [
 ];
 
 function AllPostsPage() {
-  return <AllPosts posts={DUMMY_POSTS} />;
+  return <AllPosts />;
 }
 
 export default AllPostsPage;

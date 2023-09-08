@@ -1,4 +1,5 @@
-import AllPosts from '../../components/posts/AllPosts';
+import classes from './AllPosts.module.css';
+import PostsGrid from './PostsGrid';
 
 const DUMMY_POSTS = [
   {
@@ -31,8 +32,13 @@ const DUMMY_POSTS = [
   },
 ];
 
-function AllPostsPage() {
-  return <AllPosts posts={DUMMY_POSTS} />;
+function AllPosts(props) {
+  return (
+    <section className={classes.posts}>
+      <h1>All Posts</h1>
+      <PostsGrid posts={props.posts} />
+    </section>
+  );
 }
 
-export default AllPostsPage;
+export default AllPosts;

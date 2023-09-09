@@ -7,6 +7,7 @@ import classes from './PostContent.module.css';
 function PostContent(props) {
   const { post } = props;
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  console.log(post.slug);
 
   const customComponents = {
     // image(image) {
@@ -25,7 +26,6 @@ function PostContent(props) {
 
       if (node.children[0].tagName === 'img') {
         const image = node.children[0];
-        console.log(`/images/posts/${post.slug}/${image.properties.src}`);
         return (
           <div className={classes.image}>
             <Image

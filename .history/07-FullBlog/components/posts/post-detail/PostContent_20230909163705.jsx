@@ -25,7 +25,6 @@ function PostContent(props) {
 
       if (node.children[0].tagName === 'img') {
         const image = node.children[0];
-        console.log(`/images/posts/${post.slug}/${image.properties.src}`);
         return (
           <div className={classes.image}>
             <Image

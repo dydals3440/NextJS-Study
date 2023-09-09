@@ -7,25 +7,23 @@ import classes from './PostContent.module.css';
 function PostContent(props) {
   const { post } = props;
   const imagePath = `/images/posts/${post.slug}/${post.image}`;
+  console.log(post.slug);
 
   const customComponents = {
-    // image(image) {
-    //   return (
-    //     <Image
-    //       src={`/images/posts/${post.slug}/${image.properties.src}`}
-    //       alt={image.alt}
-    //       height={300}
-    //       width={600}
-    //     />
-    //   );
-    // },
-    // Warning: Expected server HTML to contain a matching <div> in <p>
+    image(image) {
+      return (
+        <Image
+          src={`/images/posts/${post.slug}/${image.properties.src}`}
+          alt={image.alt}
+          height={300}
+          width={600}
+        />
+      );
+    },
     paragraph(paragraph) {
       const { node } = paragraph;
-
-      if (node.children[0].tagName === 'img') {
+      if (node.children[0].type === 'image') {
         const image = node.children[0];
-        console.log(`/images/posts/${post.slug}/${image.properties.src}`);
         return (
           <div className={classes.image}>
             <Image
@@ -37,7 +35,6 @@ function PostContent(props) {
           </div>
         );
       }
-      return <p>{paragraph.children}</p>;
     },
   };
 

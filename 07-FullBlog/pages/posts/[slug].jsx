@@ -1,5 +1,5 @@
 import PostContent from '../../components/posts/post-detail/PostContent';
-import { getPostData } from '../../lib/PostsUtil';
+import { getPostData, getPostsFiles } from '../../lib/PostsUtil';
 
 // /posts/getting-started-with-next-js (slug)
 function PostDetailPage(props) {
@@ -27,9 +27,12 @@ export function getStaticPaths() {
   // fallback: 'blocking'으로 설정해서 게시물이 나올떄까지 기다리게 할 수 도 있음!
   // 인기있는 게시물만 미리 생성하는것도 좋은 방법
   // 블로그는 기껏해야 200개정도 게시글을 올릴꺼므로,모든 경로를 미리 명시적으로 정의!
-  //
+  // 어떤 경로가 있는지 미리 알아내자 Util함수 사용
+  const postFileNames = getPostsFiles();
+  const slugs = postFileNames.map((fileName) => fileName.replace(/\.md/, ''));
+
   return {
-    paths: [],
+    paths: slugs.map((slug) => ({ params: { slug: slug } })),
     fallback: false,
   };
 }

@@ -11,6 +11,7 @@ const postsDirectory = path.join(process.cwd(), 'content/posts');
 export function getPostsFiles() {
   return fs.readdirSync(postsDirectory);
 }
+console.log(getPostsFiles());
 
 export function getPostData(postIdentifier) {
   const postSlug = postIdentifier.replace(/\.md$/, ''); // removes the file extension

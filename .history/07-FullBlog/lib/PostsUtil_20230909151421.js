@@ -6,8 +6,11 @@ import path from 'path';
 
 import matter from 'gray-matter';
 
-const postsDirectory = path.join(process.cwd(), 'content/posts');
-console.log(postsDirectory);
+const postsDirectory = path.join(process.cwd(), 'posts');
+
+export function getPostsFiles() {
+  return fs.readdirSync(postsDirectory);
+}
 
 export function getPostData(fileName) {
   const filePath = path.join(postsDirectory, fileName);

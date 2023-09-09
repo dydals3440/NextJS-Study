@@ -7,11 +7,11 @@ function HomePage(props) {
   return (
     <Fragment>
       <Hero />
-      <FeaturedPosts posts={props.posts} />
+      <FeaturedPosts posts={DUMMY_POSTS} />
     </Fragment>
   );
 }
-// getServerSideProps를 하면, 모든 featuredPosts를 가져올 수 있으나, 지금 이경우에는 바람직하지 못함, 큰 소득없이 매 요청마다 모든 파일과 게시물을 거쳐야해서 페이지 자체의 속도가 아주 느려질 것. 블로그 게시물은 매초 바뀔일이 딱히 없음, 업데이트를 위해서는 마크다운 파일을 바꾸어 주어야 하기 때문.
+
 export function getStaticProps() {
   const featuredPosts = getFeaturedPosts();
 
@@ -19,7 +19,6 @@ export function getStaticProps() {
     props: {
       posts: featuredPosts,
     },
-    revalidate: 60,
   };
 }
 

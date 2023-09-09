@@ -7,7 +7,6 @@ import path from 'path';
 import matter from 'gray-matter';
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
-console.log(postsDirectory);
 
 export function getPostData(fileName) {
   const filePath = path.join(postsDirectory, fileName);

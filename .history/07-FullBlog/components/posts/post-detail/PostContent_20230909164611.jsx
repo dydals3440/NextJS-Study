@@ -42,17 +42,7 @@ function PostContent(props) {
       return <p>{paragraph.children}</p>;
     },
     code(code) {
-      const { className, children } = code;
-
-      const language = className.split('-')[1]; // className is something like language-js => We need the "js" part here
-
-      return (
-        <SyntaxHighlighter
-          style={atomDark}
-          language={language}
-          children={children}
-        />
-      );
+      return <SyntaxHighlighter />;
     },
   };
 

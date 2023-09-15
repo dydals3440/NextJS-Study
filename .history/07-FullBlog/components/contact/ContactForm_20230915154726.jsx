@@ -8,17 +8,9 @@ function ContactForm() {
 
   function sendMessageHandler(e) {
     e.preventDefault();
-    // add client-side validation (required 속성으로 이미함) => optional
     fetch('/api/contact', {
       method: 'POST',
-      body: JSON.stringify({
-        email: enteredEmail,
-        name: enteredName,
-        message: enteredMessage,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: JSON.stringify({}),
     });
   }
   return (

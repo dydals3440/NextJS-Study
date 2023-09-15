@@ -14,11 +14,7 @@ function ContactForm() {
       body: JSON.stringify({
         email: enteredEmail,
         name: enteredName,
-        message: enteredMessage,
       }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
   }
   return (

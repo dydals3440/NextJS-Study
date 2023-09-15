@@ -8,17 +8,8 @@ function ContactForm() {
 
   function sendMessageHandler(e) {
     e.preventDefault();
-    // add client-side validation (required 속성으로 이미함) => optional
     fetch('/api/contact', {
       method: 'POST',
-      body: JSON.stringify({
-        email: enteredEmail,
-        name: enteredName,
-        message: enteredMessage,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
     });
   }
   return (
@@ -38,22 +29,11 @@ function ContactForm() {
           </div>
           <div className={classes.control}>
             <label htmlFor='name'>Your Name</label>
-            <input
-              type='text'
-              id='name'
-              required
-              value={enteredName}
-              onChange={(e) => setEnteredName(e.target.value)}
-            />
+            <input type='text' id='name' required value={enteredName} />
           </div>
           <div className={classes.control}>
             <label htmlFor='message'>Your Message</label>
-            <textarea
-              id='message'
-              row='5'
-              value={enteredMessage}
-              onChange={(e) => setEnteredMessage(e.target.value)}
-            ></textarea>
+            <textarea id='message' row='5'></textarea>
           </div>
         </div>
         <div className={classes.actions}>
